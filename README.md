@@ -46,6 +46,11 @@
    npm install
    EXPO_PUBLIC_API_URL=http://localhost:4000 npm run web
    ```
+   For Windows:
+   ```bash
+   $env:EXPO_PUBLIC_API_URL = "http://localhost:4000"
+   npm run web
+   ```
 
 You should see category totals update after importing a CSV.
 
