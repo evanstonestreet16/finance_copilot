@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+
+# TypeScript
+**/*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files (keep examples tracked)
+.env
+.env.*.local
+**/.env
+**/.env.*.local
+!**/.env.example
+
+# Prisma lock (ephemeral)
+packages/db/prisma/migrations/migration_lock.toml
+
+# Expo / React Native
+apps/mobile/.expo/
+apps/mobile/.expo-shared/
+apps/mobile/android/
+apps/mobile/ios/
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Swap/temp
+*.swp
+*.swo
+

@@ -10,5 +10,11 @@
     "dev:mobile": "npm --workspace apps/mobile run start",
     "db:generate": "npm --workspace packages/db run generate",
     "db:migrate": "npm --workspace packages/db run migrate"
+  },
+  "devDependencies": {
+    "prisma": "^6.17.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.17.1"
   }
 }

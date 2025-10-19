@@ -1,9 +1,14 @@
+
+
+import 'dotenv/config';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import multipart from '@fastify/multipart';
 import { prisma } from '@copilot/db/dist/index.js';
 import { parse } from 'csv-parse';
 import * as fs from 'fs';
+import * as os from 'os';
+import * as path from 'path';
 
 const server = Fastify({ logger: true });
 const PORT = Number(process.env.PORT || 4000);
@@ -18,7 +23,7 @@ server.post('/import', async (req, reply) => {
 
   for await (const part of parts) {
     if (part.type === 'file') {
-      const tmpPath = `/tmp/${Date.now()}_${part.filename}`;
+      const tmpPath = path.join(os.tmpdir(), `${Date.now()}_${part.filename}`);
       await fs.promises.writeFile(tmpPath, await part.toBuffer());
 
       const parser = fs.createReadStream(tmpPath).pipe(

@@ -1,0 +1,38 @@
+# Reduce Docker build context
+.git
+**/.git
+.gitignore
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+
+# Environment files
+.env
+.env.*.local
+**/.env
+**/.env.*.local
+
+# Prisma lock
+packages/db/prisma/migrations/migration_lock.toml
+
+# Expo / React Native
+apps/mobile/.expo/
+apps/mobile/.expo-shared/
+apps/mobile/android/
+apps/mobile/ios/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
