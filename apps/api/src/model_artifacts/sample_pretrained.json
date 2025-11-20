@@ -1,0 +1,13 @@
+{
+  "version": "demo-001",
+  "trainedAt": "2025-01-01T00:00:00Z",
+  "categories": {
+    "Dining": { "intercept": 5, "lags": [0.65, 0.2, 0.1] },
+    "Groceries": { "intercept": 10, "lags": [0.7, 0.15, 0.05] },
+    "Subscriptions": { "intercept": 2, "lags": [0.9, 0.05, 0.0] },
+    "Transport": { "intercept": 3, "lags": [0.6, 0.25, 0.05] },
+    "Other": { "intercept": 1, "lags": [0.5, 0.2, 0.1] },
+    "Uncategorized": { "intercept": 1, "lags": [0.4, 0.2, 0.1] }
+  },
+  "default": { "intercept": 2, "lags": [0.6, 0.2, 0.1] }
+}

@@ -24,6 +24,17 @@ model Account {
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
   txns      Transaction[]
+  batches   ImportBatch[]
+}
+
+model ImportBatch {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  filename    String?
+  recordCount Int
+  account     Account? @relation(fields: [accountId], references: [id])
+  accountId   String?
+  transactions Transaction[]
 }
 
 model Transaction {
@@ -38,6 +49,11 @@ model Transaction {
   category    String?
   source      String?  @default("csv")
   createdAt   DateTime @default(now())
+  batchId     String?
+  batch       ImportBatch? @relation(fields: [batchId], references: [id])
+  externalId  String?     // For deduplication (e.g. hash of transaction details)
   @@index([accountId, ts])
   @@index([category])
+  @@index([externalId])
+  @@index([batchId])
 }
